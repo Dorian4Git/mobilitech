@@ -35,11 +35,18 @@ header::before {
 header h1, header p {
   position: relative; /* To bring text to the front */
   z-index: 2; /* Ensures text is above the overlay */
+  font-size: xxx-large;
 }
 
 section {
   padding: 20px;
   margin: 20px;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: xx-large;
 }
 
 .item {
@@ -59,6 +66,11 @@ section {
 
 #values .item {
   flex-direction: row-reverse;
+}
+
+.horizontal-line {
+  border-top: 1px solid #333;
+  margin: 20px 0;
 }
 
 footer {
