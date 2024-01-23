@@ -12,29 +12,30 @@ header {
   color: white;
   text-align: center;
   padding: 20px 0;
-  height: 100vh; /* Sets the height to 100% of the viewport height */
+  height: 100vh; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative; /* Needed for the overlay to position correctly */
+  position: relative;
+  overflow: hidden; /* To contain the pseudo-element within the header */
 }
 
 header::before {
   content: '';
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay */
-  z-index: -1;
+  width: 100%; /* Full width of the header */
+  height: 100%; /* Full height of the header */
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+  z-index: 1; /* Adjusted z-index */
 }
 
 header h1, header p {
-  z-index: 1; /* Ensures text is above the overlay */
+  position: relative; /* To bring text to the front */
+  z-index: 2; /* Ensures text is above the overlay */
 }
-
 
 section {
   padding: 20px;
@@ -48,12 +49,11 @@ section {
 }
 
 .item img {
-  width: 50%;
+  width: 25%;
   height: auto;
 }
 
 .item p {
-  width: 50%;
   padding: 0 20px;
 }
 
