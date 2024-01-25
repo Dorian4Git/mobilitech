@@ -6,19 +6,44 @@ body {
   background-color: #f4f4f4;
 }
 
-header {
+/*header {
   background: url('../img/1.png') no-repeat fixed center center;
   background-size: cover;
   color: white;
   text-align: center;
   padding: 20px 0;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; !* Full viewport height *!
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
-  overflow: hidden; /* To contain the pseudo-element within the header */
+  overflow: hidden; !* To contain the pseudo-element within the header *!
+}*/
+
+header {
+  position: relative;
+  overflow: hidden; /* Ensures the video doesn't overflow the header */
+  height: 100vh; /* Adjust height as needed */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#headerVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Places the video behind the text */
+  background-size: cover;
 }
 
 header::before {
@@ -39,8 +64,10 @@ header h1, header p {
 }
 
 section {
-  padding: 20px;
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 section h2 {
@@ -51,8 +78,11 @@ section h2 {
 
 .item {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
+  width: 80%;
 }
 
 .item img {
@@ -61,7 +91,8 @@ section h2 {
 }
 
 .item p {
-  padding: 0 20px;
+  width: 50%;
+  font-size: x-large;
 }
 
 #values .item {
@@ -72,6 +103,35 @@ section h2 {
   border-top: 1px solid #333;
   margin: 20px 0;
 }
+
+nav {
+  background-color: #007BFF; /* Adjust the color as needed */
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for depth */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #FFD700; /* Or any other color for hover effect */
+}
+
 
 footer {
   background-color: #333;
